@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.js">
+    <meta charset="UTF-8" />
+    <title>Operaciones Matemáticas</title>
+    <script>
+        function sumarNumeros(num1, num2) {
+            return num1 + num2;
+        }
+
+        function restarNumeros(num3, num4) {
+            return num3 - num4;
+        }
+
+        function mostrarResultado(tipoOperacion) {
+            if (tipoOperacion === 'suma') {
+                const numero1 = parseFloat(document.getElementById("num1").value);
+                const numero2 = parseFloat(document.getElementById("num2").value);
+                const resultado = sumarNumeros(numero1, numero2);
+                document.getElementById("resultadoSuma").innerText = "La suma es: " + resultado;
+            } else if (tipoOperacion === 'resta') {
+                const numero3 = parseFloat(document.getElementById("num3").value);
+                const numero4 = parseFloat(document.getElementById("num4").value);
+                const resultado = restarNumeros(numero3, numero4);
+                document.getElementById("resultadoResta").innerText = "La resta es: " + resultado;
+            }
+        }
+    </script>
 </head>
 <body>
-    
+    <h1>Calculadora de Suma</h1>
+    <label for="num1">Número 1:</label>
+    <input type="number" id="num1" /><br /><br />
+    <label for="num2">Número 2:</label>
+    <input type="number" id="num2" /><br /><br />
+    <button onclick="mostrarResultado('suma')">Sumar</button>
+    <p id="resultadoSuma"></p>
+
+    <h1>Calculadora de Resta</h1>
+    <label for="num3">Número 3:</label>
+    <input type="number" id="num3" /><br /><br />
+    <label for="num4">Número 4:</label>
+    <input type="number" id="num4" /><br /><br />
+    <button onclick="mostrarResultado('resta')">Restar</button>
+    <p id="resultadoResta"></p>
 </body>
 </html>
